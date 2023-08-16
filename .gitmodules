@@ -1,0 +1,3 @@
+[submodule "external/PN5180-Library"]
+	path = external/PN5180-Library
+	url = https://github.com/ATrappmann/PN5180-Library.git
