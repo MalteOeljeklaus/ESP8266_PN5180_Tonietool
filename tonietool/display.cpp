@@ -1,5 +1,6 @@
 #include "include/display.hpp"
 #include "include/i2c_scan.hpp"
+#include "include/logo.hpp"
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 byte screen_address;
@@ -54,3 +55,24 @@ void display_print(const std::string& string)
   display.display();
 }
 
+void display_draw_bitmap(const int16_t& posx, const int16_t& posy, const uint8_t bitmap[], const int16_t& width, const int16_t& height)
+{
+  display.drawBitmap(posx, posy, bitmap, width, height, 1);
+  display.display();
+}
+
+void display_draw_logo(const int16_t& posx, const int16_t& posy)
+{
+  display_draw_bitmap(posx, posy, logo_bmp, 128, 12);
+}
+
+void display_splash_logo()
+{
+  for (int16_t i=64; i>=0; i--)
+  {
+    display.fillRect(0, i+1, 128, 12, 0);
+    display_draw_logo(0, i);
+    delay(50);
+  }
+
+}
