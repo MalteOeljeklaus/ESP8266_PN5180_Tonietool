@@ -55,6 +55,14 @@ void display_print(const std::string& string)
   display.display();
 }
 
+void display_print(const uint8_t& i)
+{
+  if (i<16)
+    display.print("0");
+  display.print(i, HEX);
+  display.display();
+}
+
 void display_draw_bitmap(const int16_t& posx, const int16_t& posy, const uint8_t bitmap[], const int16_t& width, const int16_t& height)
 {
   display.drawBitmap(posx, posy, bitmap, width, height, 1);
