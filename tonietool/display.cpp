@@ -44,6 +44,11 @@ void display_clear()
     display.clearDisplay();
 }
 
+void display_clear(const int16_t& x, const int16_t& y, const int16_t& width, const int16_t& height)
+{
+      display.fillRect(x, y, width, height, 0);
+}
+
 void display_set_cursor(const unsigned int& x, const unsigned int& y)
 {
   display.setCursor(x,y);

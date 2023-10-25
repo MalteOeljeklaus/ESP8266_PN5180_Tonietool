@@ -14,6 +14,7 @@
 
 bool display_init();
 void display_clear();
+void display_clear(const int16_t& x, const int16_t& y, const int16_t& width, const int16_t& height);
 void display_set_cursor(const unsigned int& x, const unsigned int& y);
 void display_print(const std::string& string);
 void display_print(const uint8_t& i);

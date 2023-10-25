@@ -49,8 +49,29 @@ void setup() {
     display_splash_logo();
 
 }
- 
-void loop() {
 
-  delay(5000);          
+
+void loop()
+{
+  uint8_t uid[8];
+  if (pn5180_loop(uid))
+  {
+    display_clear(0, 13, 128, 16);
+    display_set_cursor(0,13);
+    display_print("tag found: yes");
+    display_set_cursor(0,21);
+//    display_print("ID:");
+    for (int i=0; i<8; i++) {
+      display_print(uid[7-i]); // LSB is first
+      if (i < 2)
+        display_print(":");
+    }
+  }
+  else
+  {
+    display_clear(0, 13, 128, 8);
+    display_set_cursor(0,13);
+    display_print("tag found: no");
+  }
+
 }

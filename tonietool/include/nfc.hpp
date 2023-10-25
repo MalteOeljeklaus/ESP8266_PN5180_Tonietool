@@ -15,6 +15,9 @@
 
 bool pn5180_init(uint8_t (&productVersion)[2], uint8_t (&firmwareVersion)[2], uint8_t (&eepromVersion)[2]);
 //bool pn5180_init(uint8_t* productVersion, uint8_t* firmwareVersion, uint8_t* eepromVersion);
-
+//void pn5180_loop();
+bool pn5180_loop(uint8_t (&uid)[8]);
+void showIRQStatus(uint32_t irqStatus);
 
 #endif // NFC_HPP
+
