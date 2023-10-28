@@ -4,7 +4,7 @@
 
 This repository holds resources to build a cheap NFC reader tool "Tonietool" that can read UID numbers from Tonie figurines. It can be used with the [teddy bench](https://github.com/toniebox-reverse-engineering/teddy) software to build DIY Tonie figurines that can play custom content. The general function can be seen in the following pictures:
 
-<img src="./doc/device.png" alt="drawing" height="256"/> <img src="./doc/close.png" alt="drawing" height="256"/> <img src="./doc/wiring_photo.png" alt="drawing" height="256"/>
+<img src="./doc/device.png" alt="device with figurine" height="256"/> <img src="./doc/close.png" alt="device close" height="256"/> <img src="./doc/wiring_photo.png" alt="photo of wiring" height="256"/>
 
 ## DIY steps
 
@@ -20,7 +20,7 @@ This repository holds resources to build a cheap NFC reader tool "Tonietool" tha
 * De-solder pin headers if necessary, be aware of [some pitfalls with cheap displays](https://www.youtube.com/watch?v=wx2SWfFeppc).
 * Use soldering iron and stranded wire to connect parts according to the following schema (all parts use 3.3V logic, no level shifters needed):
 
-TODO
+<img src="./doc/wiring_schema.png" alt="schema of wiring" width="512"/>
 
 
 * Do mechanical assembly using screws and nuts and hot glue. Be careful to use small screws and nuts so as not to damage the electronic components on the boards.
