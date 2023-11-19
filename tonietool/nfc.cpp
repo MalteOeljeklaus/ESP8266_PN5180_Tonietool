@@ -80,10 +80,13 @@ bool pn5180_loop(uint8_t (&uid)[8]) {
   Serial.print(F("Loop #"));
   Serial.println(loopCnt++);
 
-  // code for unlocking an ICODE SLIX2 protected tag   
-  ISO15693ErrorCode myrc = pn5180_device.unlockICODESLIX2(password);
-  if (ISO15693_EC_OK == myrc) {
-    Serial.println("unlockICODESLIX2 successful");
+  // code for unlocking an ICODE SLIX2 protected tag
+  for (uint8_t (&password)[4]: passwords)
+  {
+    ISO15693ErrorCode myrc = pn5180_device.unlockICODESLIX2(password);
+    if (ISO15693_EC_OK == myrc) {
+      Serial.println("unlockICODESLIX2 successful");
+    }
   }
 
   
